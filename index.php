@@ -295,7 +295,7 @@ $serverName = $_SERVER['SERVER_NAME'] ?? 'localhost';
         <?php if ($totalFolders > 0): ?>
           <div class="grid">
             <?php foreach ($folders as $i => $folder): ?>
-              <a class="folder" href="<?= htmlspecialchars($folder, ENT_QUOTES, 'UTF-8') ?>/">
+              <a class="folder" href="<?= htmlspecialchars($folder, ENT_QUOTES, 'UTF-8') ?>/" target="_blank">
                 <div class="icon"><i class="ri-folder-3-line"></i></div>
                 <div class="fname"><?= htmlspecialchars($folder, ENT_QUOTES, 'UTF-8') ?></div>
                 <div class="meta"><i class="ri-terminal-box-line"></i>Project Folder</div>
