@@ -100,7 +100,7 @@ class Transaksi {
 $pr = [
     new Produk("Laptop", 15000000, 10),
     new Produk("Smartphone", 5000000, 20),
-    // tambahin 3 produk
+    // tambah 3 produk
     new Produk("Headphone", 1000000, 15),
     new Produk("Smartwatch", 2000000, 5),
     new Produk("Tablet", 3000000, 8),
@@ -148,7 +148,7 @@ $tr = [
 <div class="container">
 
 <h1>Inventory Produk</h1>
-<button><a href="https://raw.githubusercontent.com/FAHMYZAR/TugasKuliah/refs/heads/main/Praktikum2/index.php" target="_blank"> SOURCE CODE </a></button>
+<button><a href="https://github.com/FAHMYZAR/TugasKuliah/blob/main/PraktikumOOP2/index.php" target="_blank"> SOURCE CODE </a></button>
 <h2>Daftar Produk</h2>
 <table>
 <tr>

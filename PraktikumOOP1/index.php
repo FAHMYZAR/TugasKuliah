@@ -57,6 +57,7 @@ class Rekening {
     }
 }
 
+echo "<button> <a href='https://github.com/FAHMYZAR/TugasKuliah/blob/main/PraktikumOOP1/index.php' target='_blank'>SOURCE CODE</a> </button> <h2>ATM Sederhana</h2>";
 // Penggunaan
 $rekening = new Rekening("01113322574", "Fahmi Baik", 1000000);
 echo "Nomor Rekening: " . $rekening->getNomorRekening() . "<br>";
@@ -65,6 +66,7 @@ echo "Saldo awal: Rp" . number_format($rekening->getSaldo(), 0, ',', '.') . "<br
 
 $rekening->setor(500000);
 $rekening->tarik(200000);
+//Uji coba tarik melebihi saldo
 $rekening->tarik(2000000);
 
 echo "<br><br>Saldo saat ini: Rp" . 
