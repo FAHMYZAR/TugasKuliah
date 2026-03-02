@@ -114,6 +114,7 @@ $compare_ops = [
 <body>
     <div class="container">
         <h1>Informasi Barang</h1>
+        
         <div class="section">
             <table class="info-list">
                 <tr><td>Nama Barang:</td><td><?php echo $nama_barang; ?></td></tr>

@@ -55,6 +55,7 @@ class Transaksi {
 
     public function __construct(Produk $produk, int $jumlahBeli, float $diskon) {
 
+        // buat validasi jumlah beli <= 0 dan diskon < 0 atau > 1
         if ($jumlahBeli <= 0) {
             echo "Jumlah beli harus lebih dari 0.";
             return;
@@ -71,6 +72,7 @@ class Transaksi {
 
         $this->produk->kurangiStok($jumlahBeli);
         $total = $this->produk->hitungTotal($jumlahBeli);
+        // method diskon persen jadi tuh set 0-1, misal 0.1 untuk 10% diskon, dst...
         $this->totalBayar = (int)($total - ($total * $diskon));
     }
 
@@ -98,16 +100,18 @@ class Transaksi {
 $pr = [
     new Produk("Laptop", 15000000, 10),
     new Produk("Smartphone", 5000000, 20),
+    // tambahin 3 produk
     new Produk("Headphone", 1000000, 15),
     new Produk("Smartwatch", 2000000, 5),
+    new Produk("Tablet", 3000000, 8),
 ];
 
 $tr = [
     new Transaksi($pr[0], 2, 0.1),
     new Transaksi($pr[1], 1, 0.5),
+    // tambah 3 transaksi
     new Transaksi($pr[2], 3, 0.2),
     new Transaksi($pr[3], 1, 0.15),
-    new Transaksi($pr[0], 1, 0.05),
     new Transaksi($pr[1], 2, 0.25),
 ];
 
@@ -144,7 +148,7 @@ $tr = [
 <div class="container">
 
 <h1>Inventory Produk</h1>
-
+<button><a href="https://raw.githubusercontent.com/FAHMYZAR/TugasKuliah/refs/heads/main/Praktikum2/index.php" target="_blank"> SOURCE CODE </a></button>
 <h2>Daftar Produk</h2>
 <table>
 <tr>
