@@ -23,6 +23,8 @@ $serverName = $_SERVER['SERVER_NAME'] ?? 'localhost';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portal Praktikum • Nuriskha Ainun Fahmi</title>
+  <link rel="icon" type="image/png" href="https://img.icons8.com/parakeet/48/bear.png" />
+  <link rel="apple-touch-icon" href="https://img.icons8.com/parakeet/48/bear.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -277,10 +279,9 @@ $serverName = $_SERVER['SERVER_NAME'] ?? 'localhost';
     <section class="hero">
       <div class="eyebrow">Based On My Projects</div>
       <h1>Kumpulan Project Praktikum</h1>
-      <div class="sub">Nuriskha Ainun Fahmi</div>
+      <div class="sub">Nuriskha Ainun Fahmi (243200330) [24]</div>
       <p class="desc">
-        Selamat datang di portal project praktikum. Halaman ini menampilkan seluruh folder project secara otomatis
-        dengan tampilan modern, clean, dan premium layaknya dashboard file manager futuristik.
+        Selamat datang di portal project praktikum. Halaman ini menampilkan seluruh folder project secara otomatis.
       </p>
     </section>
 
