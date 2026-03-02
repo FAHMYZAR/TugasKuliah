@@ -113,6 +113,7 @@ $compare_ops = [
 </head>
 <body>
     <div class="container">
+        <button><a href="https://github.com/FAHMYZAR/TugasKuliah/blob/main/PraktikumPweb1/index.php" target="_blank"> SOURCE CODE </a></button>
         <h1>Informasi Barang</h1>
         
         <div class="section">
