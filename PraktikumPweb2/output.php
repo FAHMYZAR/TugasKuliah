@@ -24,7 +24,6 @@ class Mahasiswa
         $this->ipk     = $ipk;
     }
 }
-
 class Beasiswa extends Mahasiswa
 {
     public function dapatBeasiswa()
@@ -32,7 +31,6 @@ class Beasiswa extends Mahasiswa
         return $this->ipk >= 3;
     }
 }
-
 $nama    = $_POST['nama'];
 $nim     = $_POST['nim'];
 $kelas   = $_POST['kelas'];
@@ -41,7 +39,6 @@ $jk      = $_POST['jk'];
 $ipk     = $_POST['ipk'];
 
 $mhs = new Beasiswa($nama, $nim, $kelas, $jurusan, $jk, $ipk);
-
 ?>
 
 
