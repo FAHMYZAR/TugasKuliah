@@ -21,16 +21,6 @@ class BankMini {
     public function get_jangkawaktu() {
         return $this->jangkawaktu;
     }
-    public function set_saldo($saldo) {
-        $this->saldo = $saldo;
-    }
-    public function set_bunga($bunga) {
-        $this->bunga = $bunga;
-    }
-    public function set_jangkawaktu($jangkawaktu) {
-        $this->jangkawaktu = $jangkawaktu;
-    }
-
     public function hitung_bunga() {
         $bunga_terhitung = $this->saldo * ($this->bunga / 100) * ($this->jangkawaktu / 12);
         return $bunga_terhitung;
