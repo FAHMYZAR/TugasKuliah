@@ -35,5 +35,7 @@ $bintang = new BintangSegitiga();
         $bintang->cetak($jumlah);
     }
     ?>
+    <a href="index2.php">Menuju Tugas > Bank Mini</a><br>
+    <a href="index3.php">Menuju Tugas > Program Nilai Siswa</a>
 </body>
 </html> 
