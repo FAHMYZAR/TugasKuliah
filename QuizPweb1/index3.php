@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h1>Program Nilai Siswa</h1>
-    <button onclick="window.location.href='index3.php'">Source Code</button>
+    <button><a href="https://github.com/FAHMYZAR/TugasKuliah/blob/main/QuizPweb1/index3.php" target="_blank">Source Code</a></button>
     <br><br>    
     <form method="post" action="">
         <label for="nilaiTugas">Nilai Tugas:</label>

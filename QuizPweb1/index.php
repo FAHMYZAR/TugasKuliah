@@ -23,7 +23,7 @@ $bintang = new BintangSegitiga();
 </head>
 <body>
     <h1>Quiz PWEB 1</h1>    
-    <button> <a href="https://example.com">Source Code</a> </button>
+    <button> <a href="https://github.com/FAHMYZAR/TugasKuliah/blob/main/QuizPweb1/index.php" target="_blank">Source Code</a> </button>
     <form method="post" action="">
         <label for="jumlah">Jumlah Bintang:</label>
         <input type="number" id="jumlah" name="jumlah" min="1" required>

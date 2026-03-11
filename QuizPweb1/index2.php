@@ -51,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +60,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Bank Mini</title>
 </head>
 <body>
-    
+    <h1>Bank Mini</h1>
+    <button><a href="https://github.com/FAHMYZAR/TugasKuliah/blob/main/QuizPweb1/index2.php" target="_blank">Source Code</a></button>
+
+    <br><br>
+    <form method="post" action="">
+        <label for="saldo">Saldo:</label>
+        <input type="number" id="saldo" name="saldo" min="0" required><br><br>
+        <label for="bunga">Bunga (%):</label>
+        <input type="number" id="bunga" name="bunga" min="0" step="0.01" required><br><br>
+        <label for="jangkawaktu">Jangka Waktu (bulan):</label>
+        <input type="number" id="jangkawaktu" name="jangkawaktu" min="1" required><br><br>
+        <input type="submit" value="Hitung Bunga">
+    </form>
+    <br>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Saldo</th>
+            <th>Bunga (%)</th>
+            <th>Jangka Waktu (bulan)</th>
+            <th>Bunga Terhitung</th>
+            <th>Saldo + Bunga</th>
+        </tr>
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            echo "<tr>";
+            echo "<td>" . number_format($bankMini->get_saldo(), 2) . "</td>";
+            echo "<td>" . $bankMini->get_bunga() . "</td>";
+            echo "<td>" . $bankMini->get_jangkawaktu() . "</td>";
+            echo "<td>" . number_format($bankMini->hitung_bunga(), 2) . "</td>";
+            echo "<td>" . number_format($bankMini->get_saldo_bunga(), 2) . "</td>";
+            echo "</tr>";
+        }
+        ?>
 </body>
 </html>
