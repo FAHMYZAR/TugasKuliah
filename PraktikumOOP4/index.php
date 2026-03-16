@@ -4,8 +4,8 @@ class RekeningBank {
 
     public string $nomorRekening;
     public string $namaPemilik;
-    private int $saldo;
-    private string $pin;
+    protected int $_saldo;
+    private string $__pin;
     public string $jenisRekening;
 
     public function __construct($nomorRekening, $namaPemilik, $saldoAwal, $pin, $jenisRekening) {
@@ -17,8 +17,8 @@ class RekeningBank {
 
         $this->nomorRekening = $nomorRekening;
         $this->namaPemilik = $namaPemilik;
-        $this->saldo = $saldoAwal;
-        $this->pin = $pin;
+        $this->_saldo = $saldoAwal;
+        $this->__pin = $pin;
         $this->jenisRekening = $jenisRekening;
     }
 
@@ -27,7 +27,7 @@ class RekeningBank {
         echo "Nomor Rekening : {$this->nomorRekening}<br>";
         echo "Nama Pemilik   : {$this->namaPemilik}<br>";
         echo "Jenis Rekening : {$this->jenisRekening}<br>";
-        echo "Saldo          : Rp" . number_format($this->saldo, 0, ',', '.') . "<br>";
+        echo "Saldo          : Rp" . number_format($this->_saldo, 0, ',', '.') . "<br>";
     }
 
     public function setorUang(int $jumlah): void {
@@ -36,79 +36,84 @@ class RekeningBank {
             return;
         }
 
-        $this->saldo += $jumlah;
+        $this->_saldo += $jumlah;
 
         echo "Setor berhasil<br>";
-        echo "Saldo sekarang : Rp" . number_format($this->saldo, 0, ',', '.') . "<br>";
+        echo "Saldo sekarang : Rp" . number_format($this->_saldo, 0, ',', '.') . "<br>";
     }
 
     public function tarikUang(int $jumlah, string $pin): void {
 
-        if ($pin !== $this->pin) {
+        if ($pin !== $this->__pin) {
             echo "PIN salah<br>";
             return;
         }
 
-        if ($jumlah > $this->saldo) {
+        if ($jumlah > $this->_saldo) {
             echo "Saldo tidak cukup<br>";
             return;
         }
 
-        if (($this->saldo - $jumlah) < 50000) {
+        if (($this->_saldo - $jumlah) < 50000) {
             echo "Penarikan gagal<br>";
             echo "Saldo minimal harus 50000<br>";
             return;
         }
 
-        $this->saldo -= $jumlah;
+        $this->_saldo -= $jumlah;
 
         echo "Penarikan berhasil<br>";
-        echo "Saldo sekarang : Rp" . number_format($this->saldo, 0, ',', '.') . "<br>";
+        echo "Saldo sekarang : Rp" . number_format($this->_saldo, 0, ',', '.') . "<br>";
     }
 
     public function getSaldo(): int {
-        return $this->saldo;
+        return $this->_saldo;
     }
 
     public function ubahPin(string $pinLama, string $pinBaru): void {
-        if ($pinLama === $this->pin) {
-            $this->pin = $pinBaru;
+        if ($pinLama === $this->__pin) {
+            $this->__pin = $pinBaru;
             echo "PIN berhasil diubah<br>";
         } else {
             echo "PIN lama salah<br>";
         }
     }
 
+    // Method private untuk menerima transfer
+    private function terimaTransfer(int $jumlah): void {
+        $this->_saldo += $jumlah;
+    }
+
     // Transfer Uang
     public function transferUang(RekeningBank $tujuan, int $jumlah, string $pin): void {
 
-        if ($pin !== $this->pin) {
+        if ($pin !== $this->__pin) {
             echo "PIN salah<br>";
             return;
         }
 
-        if ($jumlah > $this->saldo) {
+        if ($jumlah > $this->_saldo) {
             echo "Saldo tidak cukup<br>";
             return;
         }
 
-        if (($this->saldo - $jumlah) < 50000) {
+        if (($this->_saldo - $jumlah) < 50000) {
             echo "Transfer gagal<br>";
             echo "Saldo minimal harus 50000<br>";
             return;
         }
 
-        $this->saldo -= $jumlah;
-        $tujuan->saldo += $jumlah;
+        $this->_saldo -= $jumlah;
+        $tujuan->terimaTransfer($jumlah);
 
         echo "Transfer berhasil<br>";
-        echo "Saldo pengirim : Rp" . number_format($this->saldo, 0, ',', '.') . "<br>";
-        echo "Saldo penerima : Rp" . number_format($tujuan->saldo, 0, ',', '.') . "<br>";
+        echo "Saldo pengirim : Rp" . number_format($this->_saldo, 0, ',', '.') . "<br>";
+        echo "Saldo penerima : Rp" . number_format($tujuan->_saldo, 0, ',', '.') . "<br>";
     }
 
     // Cejk PIN
     public function cekPin(string $pin): void {
-        if ($pin === $this->pin) {
+        if ($pin === $this->__pin) {
             echo "PIN valid ".$pin."<br>";
         } else {
             echo "PIN salah ".$pin."<br>";
@@ -118,8 +123,8 @@ class RekeningBank {
 
 $rekening1 = new RekeningBank("123456", "Andi", 500000, "1234", "Tabungan");
 $rekening2 = new RekeningBank("654321", "Budi", 200000, "5678", "Giro");
-
-echo "<button><a href='https://github.com/fahmyzzx/PraktikumOOP4' target='_blank'>👉Source Code</a></button>";
+echo "<h1>Tugas Rekening Bank</h1>";
+echo "<button><a href='https://github.com/FAHMYZAR/TugasKuliah/blob/main/PraktikumOOP4/index.php' target='_blank'>👉Source Code</a></button> <br>";
 $rekening1->tampilkanInfo();
 
 $rekening1->setorUang(200000);
