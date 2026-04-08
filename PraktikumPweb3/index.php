@@ -16,7 +16,7 @@ function volumeBola($d) {
     return (4/3) * 3.14 * pow($radius, 3);
 }
 
-echo "<button><a href="https://github.com/FAHMYZAR/TugasKuliah/blob/main/PraktikumPweb3/index.php" target="_blank"> SOURCE CODE </a></button><br><br>";
+echo "<button><a href='https://github.com/FAHMYZAR/TugasKuliah/blob/main/PraktikumPweb3/index.php' target="_blank"> SOURCE CODE </a></button><br><br>";
 
 echo "<h2>Tugas Pertama</h2>";
 echo "Diameter: $diameter <br>";
