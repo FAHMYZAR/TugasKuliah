@@ -43,7 +43,7 @@
 
                         <div class="form-group">
                             <label for="tahun_penerbitan_buku">Tahun Penerbitan *</label>
-                            <input type="number" id="tahun_penerbitan_buku" name="tahun_penerbitan_buku" min="1900" max="2099" placeholder="Contoh: 2024" required />
+                            <input type="number" id="tahun_penerbitan_buku" name="tahun_penerbitan_buku" min="1900" max="2099" placeholder="Contoh: 2026" required />
                         </div>
 
                         <div class="form-group">
@@ -66,7 +66,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Sistem Perpustakaan. All rights reserved.</p>
+            <p>&copy; 2026 Sistem Perpustakaan. All rights reserved.</p>
         </div>
     </footer>
 

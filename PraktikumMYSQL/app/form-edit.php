@@ -1,21 +1,15 @@
 <?php
-
 include("../config/database.php");
-
 if (!isset($_GET['id'])) {
     header('Location: list-buku.php');
 }
-
 $id = $_GET['id'];
-
 $sql = "SELECT * FROM buku WHERE id_buku=$id limit 1";
 $query = mysqli_query($db, $sql);
 $buku = mysqli_fetch_array($query);
-
 if (mysqli_num_rows($query) < 1) {
     die("data tidak ditemukan...");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +81,7 @@ if (mysqli_num_rows($query) < 1) {
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Sistem Perpustakaan. All rights reserved.</p>
+            <p>&copy; 2026 Sistem Perpustakaan. All rights reserved.</p>
         </div>
     </footer>
 

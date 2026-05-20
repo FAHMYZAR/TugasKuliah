@@ -1,8 +1,9 @@
 <?php
 
-$server = "mysql_db";
+// $server = "mysql_db";
+$server = "localhost";
 $user = "root";
-$password = "root";
+$password = "";
 $nama_database = "perpustakaan";
 
 $port = 3306;
